@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+body {
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+
+.container {
+    width: 960px;
+    max-width: 100%;
+    margin-bottom: 3rem;
+}

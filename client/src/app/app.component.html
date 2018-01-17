@@ -1,1 +1,10 @@
-<app-values></app-values>
+<mat-toolbar color="primary">
+    <span>Angular learning app</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <a mat-button [routerLink]="['/']">Home</a>
+    <a mat-button [routerLink]="['/values']">Values</a>
+</mat-toolbar>
+<router-outlet></router-outlet>

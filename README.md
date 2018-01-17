@@ -211,4 +211,117 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 # Lets route this application up!
 From now on the examples will be in bigger chunks.
-Lets create a nav bar where all our functionality is available in a drop down menu 😀
+Lets create a nav bar where all our functionality is available in a drop down menu 🤗
+
+### Step 1 - install Angular Materials
+Install Angular Materials with animation.
+```console
+npm install --save @angular/material @angular/cdk
+npm install --save @angular/animations
+```
+### Step 2 - Import Materials component modules
+```javascript
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+@NgModule({
+  ...
+  imports: [MatToolbarModule, BrowserAnimationsModule, MatButtonModule],
+  ...
+})
+export class AppModule { }
+```
+### Step 3 - Include a material theme
+Add this to our `styles.css`
+```css
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+```
+Style our `style.css`
+```css
+...
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+body {
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+```
+
+### Step 4 - Include material icons
+Add `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">` To `index.html`.
+
+### Step 5 - Create our navbar in `app.component.ts`:
+```html
+<mat-toolbar color="primary">
+    <span>Angular learning app</span>
+    <span class="example-fill-remaining-space"></span>
+    <a mat-button>Values</a>
+</mat-toolbar>
+```
+### Step 6 - Create a homecomponent
+```console
+ng generate component home -skip-import
+```
+Add it to `app.module.ts`
+```javascript
+...
+import { HomeComponent } from './home/home.component';
+
+@NgModule({
+    declarations: [HomeComponent],
+    ...
+})
+export class AppModule { }
+
+```
+### Step 7 - Add routing functionality
+Create a new file inside app `app.routing.module.ts`
+```javascript
+import { RouterModule, Routes } from '@angular/router';
+import { ValuesComponent } from "./values/values.component";
+import { NgModule } from '@angular/core';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'values', component: ValuesComponent}
+]
+
+@NgModule({
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule{}
+```
+Import `AppRoutingModule` to `app.module.ts`
+```javascript
+...
+import { AppRoutingModule } from './app.routing.module';
+
+@NgModule({
+    ...
+    imports: [AppRoutingModule]
+    ...
+})
+export class AppModule { }
+```
+
+### Step 8 - Update `app.module.html`
+```html
+<mat-toolbar color="primary">
+    <span>Angular learning app</span>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <a mat-button [routerLink]="['/']">Home</a>
+    <a mat-button [routerLink]="['/values']">Values</a>
+</mat-toolbar>
+<router-outlet></router-outlet>
+```
