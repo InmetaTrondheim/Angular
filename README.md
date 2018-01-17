@@ -2,10 +2,8 @@
 This project is intended to be a learning platform for Angular web solutions.
 
 # Steps
-## 1
-Clone GIT repository (I'm using the Desktop GitHub app)
-## 2
-Instantiate a new angular application
+## 1 Clone GIT repository (I'm using the Desktop GitHub app)
+## 2 Instantiate a new angular application
 ```console
 ng new client
 cd client
@@ -13,8 +11,7 @@ ng s
 ```
 Open `localhost:4200` in preffered web browser.
 
-## 3
-Instantiate a new DotNet Core web-api application.
+## 3 Instantiate a new DotNet Core web-api application.
 
 Go up to the root directory `cd ..`
 
@@ -189,7 +186,7 @@ In `values.component.html` remove existing code (if you like) and paste in the f
 ```html
 <p *ngFor="let value of values">{{ value }}</p>
 ```
-> **INFO** *If you haven't already, you must close `ng s` and start it again after adding a new property to the `environment.ts` file. The Webapi will also not like to recieve calls from an unknown entity (our angular app), so we must enable CORS for our site `(http://localhost:4200)`.
+> **INFO** *If you haven't already, you must close `ng s` and start it again after adding a new property to the `environment.ts` file. The Webapi will also not like to recieve calls from an unknown entity (our angular app), so we must enable CORS for our site `(http://localhost:4200)`.*
 
 ### To add CORS to the webapi project open `Startup.cs` and add `AddCors()` in `ConfigureServices()`
 ```Csharp
