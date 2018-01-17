@@ -196,7 +196,7 @@ public void ConfigureServices(IServiceCollection services)
     services.AddCors();
 }
 ```
-And allow `http://localhost:4200`
+And allow `http://localhost:4200` with `app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));`
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
