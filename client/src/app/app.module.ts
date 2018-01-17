@@ -18,7 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FoodComponent } from './forms/food/food.component';
 import { NameComponent } from './forms/name/name.component';
 import { DoneComponent } from './forms/done/done.component';
-
+import { FormComponent } from './form/form.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DoneComponent } from './forms/done/done.component';
     FormsComponent,
     FoodComponent,
     NameComponent,
-    DoneComponent
+    DoneComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { DoneComponent } from './forms/done/done.component';
     ReactiveFormsModule,
     MatStepperModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
   ],
   providers: [ValueService],
   bootstrap: [AppComponent]

@@ -327,6 +327,12 @@ export class AppModule { }
 ```
 
 # Lets form this app up
+## Forms intro
+### 1 - Create a new form component and add it to `app.module.ts`
+```console
+ng generate component form
+```
+### 2 - Import Angular forms modules
 My prefered flavor is reactive forms, so let import modules for that into `app.module.ts`
 ```javascript
 ...
@@ -340,6 +346,50 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class AppModule { }
 ```
+### 3 - Import Formbuilder into `form.component.ts`
+Import the formbuilder and build up your form. We're starting with five simple input directives.
+```javascript
+...
+  constructor(private _fb: FormBuilder) { }
+
+  ngOnInit() {
+    this.ourFormGroup = this._fb.group({
+      firstName: [''],
+      lastName: [''],
+      address: [''],
+      country: [''],
+      favorite_food: ['']
+    })
+  }
+...
+```
+And the `form.component.html`
+```html
+<div class="container">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="ourFormGroup" class="example-full-width">
+              <mat-form-field class="example-form">
+                <input matInput type="text" formControlName="firstName" placeholder="First name">
+              </mat-form-field>
+              <mat-form-field class="example-form">
+                <input matInput type="text" formControlName="lastName" placeholder="Sur name">
+              </mat-form-field>
+              <mat-form-field class="example-form">
+                <input matInput type="text" formControlName="address" placeholder="Street Adress">
+              </mat-form-field>
+              <mat-form-field class="example-form">
+                <input matInput type="text" formControlName="country" placeholder="Country of residency">
+              </mat-form-field>
+              <mat-form-field class="example-form">
+                <input matInput type="text" formControlName="favorite_food" placeholder="Your favorite food">
+              </mat-form-field>
+              </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+```
+## More complex form
 Create a new component named `forms` and add it to `app.module.ts`.
 Add it to routes.
 ```javascript
