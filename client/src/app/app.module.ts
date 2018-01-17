@@ -10,13 +10,16 @@ import { ValuesComponent } from './values/values.component';
 import { ValueService } from './.core/services/value.service';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ValuesComponent,
-    HomeComponent
+    HomeComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,9 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ValueService],
   bootstrap: [AppComponent]

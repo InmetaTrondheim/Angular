@@ -325,3 +325,31 @@ export class AppModule { }
 </mat-toolbar>
 <router-outlet></router-outlet>
 ```
+
+# Lets form this app up
+My prefered flavor is reactive forms, so let import modules for that into `app.module.ts`
+```javascript
+...
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
+@NgModule({
+  ...
+  imports: [FormsModule, ReactiveFormsModule ]
+  ...
+})
+export class AppModule { }
+```
+Create a new component named `forms` and add it to `app.module.ts`.
+Add it to routes.
+```javascript
+const appRoutes: Routes = [
+   ...
+    { path: 'forms', component: FormsComponent}
+   ...
+]
+```
+Add router link in navbar:
+```html
+    <a mat-button [routerLink]="['/forms']">Forms</a>
+```
