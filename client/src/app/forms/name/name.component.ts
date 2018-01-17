@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class NameComponent implements OnInit {
 
-  @Input() firstFormGroup: FormGroup
+  @Input() identityFormGroup: FormGroup
   constructor() { }
 
   ngOnInit() {

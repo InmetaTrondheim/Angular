@@ -25,8 +25,11 @@ namespace webapi.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]ValuesDto values)
         {
+            values.IdentityFormGroup.Name = values.IdentityFormGroup.Name.ToUpper();
+            values.QuestionsFormGroup.Food = values.QuestionsFormGroup.Food.ToUpper();
+            return Ok(values);
         }
 
         // PUT api/values/5
@@ -41,4 +44,14 @@ namespace webapi.Controllers
         {
         }
     }
+    public class ValuesDto{
+        public IdentityFormGroup IdentityFormGroup {get;set;}
+        public QuestionsFormGroup QuestionsFormGroup {get;set;}
+    }
+    public class IdentityFormGroup{
+        public string Name {get;set;}
+    }
+    public class QuestionsFormGroup{
+            public string Food {get;set;}
+        }
 }

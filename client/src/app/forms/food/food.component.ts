@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class FoodComponent implements OnInit {
 
-  @Input() secondFormGroup: FormGroup
+  @Input() questionsFormGroup: FormGroup
   constructor() { }
 
   ngOnInit() {

@@ -12,4 +12,9 @@ export class ValueService {
     const url = environment.apiUrl + 'values';
     return this._http.get<string[]>(url);
   }
+
+  send(form: any): Observable<any> {
+    const url = environment.apiUrl + 'values';
+    return this._http.post<any>(url, form);
+  }
 }

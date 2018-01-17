@@ -1,5 +1,16 @@
+You are now done.
 
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Send</button>
-        </div>
+<p>
+    <b>Name: </b> {{ name }}
+</p>
+<p>
+    <b>Food: </b> {{ food }}
+</p>
+<pre>{{ regForm.value | json }}</pre>
+<div>
+  <button mat-button (click)="sendForm()">Send</button>
+</div>
+
+<div *ngIf="result">
+  <pre>{{ result | json }}</pre>
+</div>
