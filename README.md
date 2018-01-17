@@ -1,6 +1,24 @@
 # Angular
 This project is intended to be a learning platform for Angular web solutions.
-
+# How to run
+## 1 - Angular client
+Navigate to the client folder and start downloading npm packages:
+```console
+npm install
+```
+Start the client application with*
+```console
+ng s
+```
+## 2 - Web api
+In an new command window navigate to the webapi folder and execute:
+```console
+dotnet restore
+dotnet build
+dotnet watch run
+```
+## 3 - Where is it?
+Navigate to [localhost!](http://localhost:4200)
 # Steps
 ## 1 Clone GIT repository (I'm using the Desktop GitHub app)
 ## 2 Instantiate a new angular application
