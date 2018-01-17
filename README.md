@@ -6,7 +6,7 @@ Navigate to the client folder and start downloading npm packages:
 ```console
 npm install
 ```
-Start the client application with*
+Start the client application with
 ```console
 ng s
 ```
