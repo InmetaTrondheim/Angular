@@ -353,3 +353,24 @@ Add router link in navbar:
 ```html
     <a mat-button [routerLink]="['/forms']">Forms</a>
 ```
+
+Import `MatStepperModule` and `MatCardModule`.
+
+```javascript
+...
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+
+@NgModule({
+  ...
+  imports: [MatStepperModule, MatCardModule, MatInputModule]
+})
+export class AppModule { }
+```
+
+Create two new components inside `forms` and import them into `app.module.ts`
+```console
+ng generate component forms/food -skip-import
+ng generate component forms/name -skip-import
+```

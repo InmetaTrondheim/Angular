@@ -1,3 +1,23 @@
-<p>
-  forms works!
-</p>
+<div class="container">
+    <button mat-raised-button (click)="isLinear = true" id="toggle-linear">Enable linear mode</button>
+
+  <mat-horizontal-stepper [linear]="isLinear">
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <app-name [firstFormGroup]="firstFormGroup"></app-name>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your favorite food</ng-template>
+        <app-food [secondFormGroup]="secondFormGroup"></app-food>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <app-done></app-done>
+      </mat-step>
+    </mat-horizontal-stepper>
+</div>
+
+<!-- <mat-card>
+    <mat-card-title>Hello there</mat-card-title>
+    <mat-card-content>This is my content</mat-card-content>
+</mat-card> -->

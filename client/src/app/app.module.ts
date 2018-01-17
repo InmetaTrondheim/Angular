@@ -12,6 +12,12 @@ import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { FoodComponent } from './forms/food/food.component';
+import { NameComponent } from './forms/name/name.component';
+import { DoneComponent } from './forms/done/done.component';
 
 
 @NgModule({
@@ -19,7 +25,10 @@ import { FormsComponent } from './forms/forms.component';
     AppComponent,
     ValuesComponent,
     HomeComponent,
-    FormsComponent
+    FormsComponent,
+    FoodComponent,
+    NameComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,10 @@ import { FormsComponent } from './forms/forms.component';
     MatButtonModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [ValueService],
   bootstrap: [AppComponent]

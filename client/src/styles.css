@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
@@ -15,5 +15,5 @@ body {
 .container {
     width: 960px;
     max-width: 100%;
-    margin-bottom: 3rem;
+    margin: auto;
 }
