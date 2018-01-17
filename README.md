@@ -122,7 +122,7 @@ export const environment = {
 };
 ```
 
-For the service to work, we must inject HttpClient and call the correct url: `http://localhost:5000/api/values', the value.service.ts file should look like this:
+For the service to work, we must inject HttpClient and call the correct url: `http://localhost:5000/api/values`, the value.service.ts file should look like this:
 ```javascript
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -208,3 +208,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     app.UseMvc();
 }
 ```
+
+# Lets route this application up!
+From now on the examples will be in bigger chunks.
+Lets create a nav bar where all our functionality is available in a drop down menu 😀
